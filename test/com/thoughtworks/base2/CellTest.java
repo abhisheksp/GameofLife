@@ -35,4 +35,13 @@ public class CellTest {
 
         assertFalse(cell.isAlive());
     }
+
+    @Test
+    public void shouldKillAliveCellWhenKillIsCalled() {
+        Cell cell = new Cell(true);
+
+        cell.kill();
+
+        assertEquals(new Cell(false).format(), cell.format());
+    }
 }
