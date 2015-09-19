@@ -1,5 +1,6 @@
 package com.thoughtworks.base2;
 
+/* Cell is either dead and alive based on which it can format itself. */
 public class Cell {
 
     private boolean isAlive;
@@ -12,5 +13,9 @@ public class Cell {
         if (isAlive)
             return "X";
         return "-";
+    }
+
+    public boolean isAlive() {
+        return true;
     }
 }
