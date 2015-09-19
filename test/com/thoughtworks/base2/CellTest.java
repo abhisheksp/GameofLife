@@ -77,4 +77,9 @@ public class CellTest {
         Cell cell = new Cell(true);
         assertEquals(cell, cell);
     }
+
+    @Test
+    public void twoAliveCellsAreEqual() {
+        assertEquals(new Cell(true), new Cell(true));
+    }
 }

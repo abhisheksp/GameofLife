@@ -26,4 +26,11 @@ public class Cell {
     public void revive() {
         isAlive = true;
     }
+
+    @Override
+    public boolean equals(Object that) {
+        Cell thatCell = (Cell) that;
+        return isAlive == thatCell.isAlive;
+
+    }
 }
