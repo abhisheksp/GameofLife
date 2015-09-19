@@ -10,9 +10,9 @@ public class CellGrid {
 
     public int aliveNeighboursCount(int xCoordinate, int yCoordinate) {
         int count = 0;
-        if (cells[xCoordinate + 1][yCoordinate].isAlive())
+        if ((xCoordinate + 1 < cells.length) && cells[xCoordinate + 1][yCoordinate].isAlive())
             count++;
-        if (cells[xCoordinate - 1][yCoordinate].isAlive())
+        if ((xCoordinate - 1 >= 0) && cells[xCoordinate - 1][yCoordinate].isAlive())
             count++;
         if ((yCoordinate + 1 < cells[0].length) && cells[xCoordinate][yCoordinate + 1].isAlive())
             count++;
