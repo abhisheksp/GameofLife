@@ -128,7 +128,7 @@ public class CellGridTest {
     }
 
     @Test
-    public void shouldKillAliveCellInTheGridIfAliveNeighboursCountIsLessThanTwo() {
+    public void shouldKillAliveCellsInTheGridIfAliveNeighboursCountIsLessThanTwo() {
         Cell[][] cells = {
                 {new Cell(true), new Cell(false), new Cell(true)},
                 {new Cell(false), new Cell(false), new Cell(false)},
@@ -137,6 +137,24 @@ public class CellGridTest {
         Cell[][] evolvedCells = {
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(false)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+        assertArrayEquals(evolvedCells, cellGrid.evolve());
+    }
+
+
+    @Test
+    public void shouldKillAliveCellsInTheGridIfAliveNeighboursCountIsMoreThanThree() {
+        Cell[][] cells = {
+                {new Cell(false), new Cell(true), new Cell(true)},
+                {new Cell(true), new Cell(true), new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(false)}
+        };
+        Cell[][] evolvedCells = {
+                {new Cell(false), new Cell(false), new Cell(true)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)}
         };
         CellGrid cellGrid = new CellGrid(cells);
