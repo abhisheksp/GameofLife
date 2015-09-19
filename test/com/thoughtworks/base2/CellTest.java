@@ -95,4 +95,9 @@ public class CellTest {
     public void cellShouldNotBeEqualToNonCellEntity() {
         assertNotEquals(new Cell(true), "Not a cell");
     }
+
+    @Test
+    public void aliveCellShouldHaveSameHashCode() {
+        assertEquals(new Cell(true).hashCode(), new Cell(true).hashCode());
+    }
 }

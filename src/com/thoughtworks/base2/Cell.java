@@ -33,6 +33,10 @@ public class Cell {
         if (that == null || getClass() != that.getClass()) return false;
         Cell thatCell = (Cell) that;
         return isAlive == thatCell.isAlive;
+    }
 
+    @Override
+    public int hashCode() {
+        return (isAlive ? 1 : 0);
     }
 }
