@@ -29,6 +29,7 @@ public class Cell {
 
     @Override
     public boolean equals(Object that) {
+        if (this == that) return true;
         if (that == null || getClass() != that.getClass()) return false;
         Cell thatCell = (Cell) that;
         return isAlive == thatCell.isAlive;
