@@ -2,9 +2,7 @@ package com.thoughtworks.base2;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CellTest {
 
@@ -83,9 +81,13 @@ public class CellTest {
         assertEquals(new Cell(true), new Cell(true));
     }
 
-
     @Test
     public void twoDeadCellsAreEqual() {
         assertEquals(new Cell(false), new Cell(false));
+    }
+
+    @Test
+    public void cellShouldNotBeEqualToNull() {
+        assertNotEquals(new Cell(true), null);
     }
 }
