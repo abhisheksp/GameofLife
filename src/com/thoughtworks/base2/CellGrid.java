@@ -33,4 +33,8 @@ public class CellGrid {
             count++;
         return count;
     }
+
+    public Cell[][] evolve() {
+        return cells;
+    }
 }

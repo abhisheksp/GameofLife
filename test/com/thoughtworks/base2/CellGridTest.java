@@ -2,6 +2,7 @@ package com.thoughtworks.base2;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class CellGridTest {
@@ -50,5 +51,17 @@ public class CellGridTest {
         CellGrid cellGrid = new CellGrid(cells);
 
         assertEquals(0, cellGrid.aliveNeighboursCount(0, 0));
+    }
+
+    @Test
+    public void shouldReturnSameGridWhenEvolveIsCalled() {
+        Cell[][] cells = {
+                {new Cell(true), new Cell(true), new Cell(true)},
+                {new Cell(true), new Cell(false), new Cell(true)},
+                {new Cell(true), new Cell(true), new Cell(true)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+        assertArrayEquals(cells, cellGrid.evolve());
     }
 }
