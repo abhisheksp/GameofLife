@@ -90,4 +90,9 @@ public class CellTest {
     public void cellShouldNotBeEqualToNull() {
         assertNotEquals(new Cell(true), null);
     }
+
+    @Test
+    public void cellShouldNotBeEqualToNonCellEntity() {
+        assertNotEquals(new Cell(true), "Not a cell");
+    }
 }
