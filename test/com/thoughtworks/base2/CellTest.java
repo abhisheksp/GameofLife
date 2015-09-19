@@ -44,4 +44,13 @@ public class CellTest {
 
         assertEquals(new Cell(false).format(), cell.format());
     }
+
+    @Test
+    public void shouldRemainDeadWhenKillIsCalledOnDeadCell() {
+        Cell cell = new Cell(false);
+
+        cell.kill();
+
+        assertEquals(new Cell(false).format(), cell.format());
+    }
 }
