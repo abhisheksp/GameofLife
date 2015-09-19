@@ -12,4 +12,11 @@ public class CellTest {
 
         assertEquals("X", cell.format());
     }
+
+    @Test
+    public void shouldReturnHiphenIfCellIsDeadWhenFormatIsCalled(){
+        Cell cell = new Cell(false);
+
+        assertEquals("-", cell.format());
+    }
 }

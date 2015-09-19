@@ -9,6 +9,8 @@ public class Cell {
     }
 
     public String format() {
-        return "X";
+        if(isAlive)
+            return "X";
+        return "-";
     }
 }
