@@ -100,4 +100,9 @@ public class CellTest {
     public void aliveCellShouldHaveSameHashCode() {
         assertEquals(new Cell(true).hashCode(), new Cell(true).hashCode());
     }
+
+    @Test
+    public void deadCellShouldHaveSameHashCode() {
+        assertEquals(new Cell(false).hashCode(), new Cell(false).hashCode());
+    }
 }
