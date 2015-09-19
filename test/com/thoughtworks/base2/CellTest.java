@@ -3,6 +3,7 @@ package com.thoughtworks.base2;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class CellTest {
@@ -26,5 +27,12 @@ public class CellTest {
         Cell cell = new Cell(true);
 
         assertTrue(cell.isAlive());
+    }
+
+    @Test
+    public void shouldReturnFalseIfCellIsDeadWhenIsAliveIsCalled() {
+        Cell cell = new Cell(false);
+
+        assertFalse(cell.isAlive());
     }
 }
