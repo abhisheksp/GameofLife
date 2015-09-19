@@ -14,6 +14,12 @@ public class CellGrid {
         count += verticalAliveNeighboursCount(xCoordinate, yCoordinate);
         count += horizontalAliveNeighboursCount(cells[xCoordinate], yCoordinate);
         count += mainDiagonalAliveNeighboursCount(xCoordinate, yCoordinate);
+        count += secondaryDiagonalAliveNeighboursCount(xCoordinate, yCoordinate);
+        return count;
+    }
+
+    private int secondaryDiagonalAliveNeighboursCount(int xCoordinate, int yCoordinate) {
+        int count = 0;
         if ((xCoordinate - 1 >= 0 && yCoordinate + 1 < cells[0].length) && cells[xCoordinate - 1][yCoordinate + 1].isAlive())
             count++;
         if ((xCoordinate + 1 < cells.length && yCoordinate - 1 >= 0) && cells[xCoordinate + 1][yCoordinate - 1].isAlive())
