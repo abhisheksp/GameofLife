@@ -9,23 +9,25 @@ public class CellGridTest {
     @Test
     public void shouldReturnAliveNeighboursHorizontalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
+                {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(true), new Cell(false), new Cell(true)},
                 {new Cell(false), new Cell(false), new Cell(false)}
         };
         CellGrid cellGrid = new CellGrid(cells);
 
-        assertEquals(2, cellGrid.aliveNeighboursCount(0, 1));
+        assertEquals(2, cellGrid.aliveNeighboursCount(1, 1));
     }
 
     @Test
     public void shouldCheckForArrayBoundsHorizontally() {
         Cell[][] cells = {
+                {new Cell(false)},
                 {new Cell(true)},
                 {new Cell(false)}
         };
         CellGrid cellGrid = new CellGrid(cells);
 
-        assertEquals(0, cellGrid.aliveNeighboursCount(0, 0));
+        assertEquals(0, cellGrid.aliveNeighboursCount(1, 0));
     }
 
     @Test
@@ -37,6 +39,6 @@ public class CellGridTest {
         };
         CellGrid cellGrid = new CellGrid(cells);
 
-        assertEquals(1, cellGrid.aliveNeighboursCount(1, 0));
+        assertEquals(2, cellGrid.aliveNeighboursCount(1, 0));
     }
 }
