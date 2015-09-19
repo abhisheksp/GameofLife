@@ -58,11 +58,15 @@ public class CellGrid {
 
     public Cell[][] evolve() {
         Cell[][] evolvedCells = cloneCurrentGeneration();
+        killAliveCellsWithLessThanTwoAliveNeighbours(evolvedCells);
+        return evolvedCells;
+    }
+
+    private void killAliveCellsWithLessThanTwoAliveNeighbours(Cell[][] evolvedCells) {
         for (int i = 0; i < cells.length; i++)
             for (int j = 0; j < cells[0].length; j++)
                 if(aliveNeighboursCount(i, j) < 2)
                     evolvedCells[i][j].kill();
-        return evolvedCells;
     }
 
     public Cell[][] cloneCurrentGeneration() {
