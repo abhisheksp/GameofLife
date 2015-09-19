@@ -62,4 +62,13 @@ public class CellTest {
 
         assertEquals(new Cell(true).format(), cell.format());
     }
+
+    @Test
+    public void shouldRemainAliveWhenReviveIsCalledOnAliveCell() {
+        Cell cell = new Cell(true);
+
+        cell.revive();
+
+        assertEquals(new Cell(true).format(), cell.format());
+    }
 }
