@@ -13,6 +13,8 @@ public class CellGrid {
         int count = 0;
         count += verticalNeighboursCount(xCoordinate, yCoordinate);
         count += horizontalNeighboursCount(cells[xCoordinate], yCoordinate);
+        if(cells[xCoordinate-1][yCoordinate-1].isAlive())
+            count ++;
         return count;
     }
 

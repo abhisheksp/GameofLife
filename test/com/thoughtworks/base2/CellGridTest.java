@@ -54,6 +54,18 @@ public class CellGridTest {
     }
 
     @Test
+    public void shouldReturnAliveNeighboursPrincipalDiagonalCountInOneDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
+        Cell[][] cells = {
+                {new Cell(true), new Cell(false)},
+                {new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(false)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+        assertEquals(1, cellGrid.aliveNeighboursCount(1, 1));
+    }
+
+    @Test
     public void shouldReturnSameGridWhenEvolveIsCalled() {
         Cell[][] cells = {
                 {new Cell(true), new Cell(true), new Cell(true)},
