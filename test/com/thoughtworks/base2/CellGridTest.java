@@ -126,4 +126,22 @@ public class CellGridTest {
 
         assertArrayEquals(cells, cellGrid.cloneCurrentGeneration());
     }
+
+    @Test
+    public void shouldKillAliveCellInTheGridIfAliveNeighboursCountIsLessThanTwo() {
+        Cell[][] cells = {
+                {new Cell(true), new Cell(false), new Cell(true)},
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(true)}
+        };
+        Cell[][] evolvedCells = {
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(false)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+
+        assertArrayEquals(evolvedCells, cellGrid.evolve());
+    }
 }
