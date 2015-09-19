@@ -60,7 +60,7 @@ public class CellGrid {
         Cell[][] evolvedCells = cloneCurrentGeneration();
         for (int i = 0; i < cells.length; i++)
             for (int j = 0; j < cells[0].length; j++) {
-                if (aliveNeighboursCount(i, j) < 2 || aliveNeighboursCount(i, j) > 2)
+                if (aliveNeighboursCount(i, j) < 2 || aliveNeighboursCount(i, j) > 3)
                     evolvedCells[i][j].kill();
             }
         return evolvedCells;
