@@ -68,6 +68,18 @@ public class CellGridTest {
     }
 
     @Test
+    public void shouldCheckForArrayBoundsInPrincipalDiagonal() {
+        Cell[][] cells = {
+                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(false), new Cell(true)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+        assertEquals(0, cellGrid.aliveNeighboursCount(0, 0));
+    }
+
+    @Test
     public void shouldReturnSameGridWhenEvolveIsCalled() {
         Cell[][] cells = {
                 {new Cell(true), new Cell(true), new Cell(true)},
