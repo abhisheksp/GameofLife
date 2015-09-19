@@ -10,7 +10,7 @@ public class CellGridTest {
     @Test
     public void shouldReturnAliveNeighboursHorizontalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -22,7 +22,7 @@ public class CellGridTest {
     @Test
     public void shouldCheckForArrayBoundsHorizontally() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -34,7 +34,7 @@ public class CellGridTest {
     @Test
     public void shouldReturnAliveNeighboursVerticalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -46,7 +46,7 @@ public class CellGridTest {
     @Test
     public void shouldCheckForArrayBoundsVertically() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -58,7 +58,7 @@ public class CellGridTest {
     @Test
     public void shouldReturnAliveNeighboursPrincipalDiagonalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -70,7 +70,7 @@ public class CellGridTest {
     @Test
     public void shouldCheckForArrayBoundsInPrincipalDiagonal() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -82,7 +82,7 @@ public class CellGridTest {
     @Test
     public void shouldReturnAliveNeighboursSecondaryDiagonalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
-                {new Cell(false), new Cell(false) , new Cell(true)},
+                {new Cell(false), new Cell(false), new Cell(true)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(true), new Cell(false), new Cell(false)}
         };
@@ -94,7 +94,7 @@ public class CellGridTest {
     @Test
     public void shouldCheckForArrayBoundsInSecondaryDiagonal() {
         Cell[][] cells = {
-                {new Cell(true), new Cell(false) , new Cell(false)},
+                {new Cell(true), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(false)},
                 {new Cell(false), new Cell(false), new Cell(true)}
         };
@@ -113,5 +113,17 @@ public class CellGridTest {
         CellGrid cellGrid = new CellGrid(cells);
 
         assertArrayEquals(cells, cellGrid.evolve());
+    }
+
+    @Test
+    public void shouldReturnedCloneOfTheCurrentCellGridWhenCloneIsCalled() {
+        Cell[][] cells = {
+                {new Cell(true), new Cell(true), new Cell(true)},
+                {new Cell(true), new Cell(false), new Cell(true)},
+                {new Cell(true), new Cell(true), new Cell(true)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
+        assertArrayEquals(cells, cellGrid.cloneCurrentGeneration());
     }
 }

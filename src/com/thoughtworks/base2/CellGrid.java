@@ -1,5 +1,7 @@
 package com.thoughtworks.base2;
 
+import java.util.Arrays;
+
 /* CellGrid contains a grid of cells and can find alive neighbours coutn for each cell */
 public class CellGrid {
 
@@ -56,5 +58,12 @@ public class CellGrid {
 
     public Cell[][] evolve() {
         return cells;
+    }
+
+    public Cell[][] cloneCurrentGeneration() {
+        Cell[][] clonedCells = new Cell[cells.length][];
+        for (int i = 0; i < cells.length; i++)
+            clonedCells[i] = cells[i].clone();
+        return clonedCells;
     }
 }
