@@ -16,8 +16,6 @@ public class Cell {
     }
 
     public boolean isAlive() {
-        if (isAlive)
-            return true;
-        return false;
+        return isAlive;
     }
 }
