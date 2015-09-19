@@ -62,6 +62,8 @@ public class CellGrid {
             for (int j = 0; j < cells[0].length; j++) {
                 if (aliveNeighboursCount(i, j) < 2 || aliveNeighboursCount(i, j) > 3)
                     evolvedCells[i][j].kill();
+                if (aliveNeighboursCount(i, j) == 3)
+                    evolvedCells[i][j].revive();
             }
         return evolvedCells;
     }

@@ -176,7 +176,24 @@ public class CellGridTest {
                 {new Cell(false), new Cell(true), new Cell(false)}
         };
         CellGrid cellGrid = new CellGrid(cells);
-    
+
+        assertArrayEquals(evolvedCells, cellGrid.evolve());
+    }
+
+    @Test
+    public void deadCellsWithExactlyThreeNeighboursShouldComeBackToLife() {
+        Cell[][] cells = {
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(true), new Cell(true)},
+                {new Cell(false), new Cell(true), new Cell(false)}
+        };
+        Cell[][] evolvedCells = {
+                {new Cell(false), new Cell(false), new Cell(false)},
+                {new Cell(false), new Cell(true), new Cell(true)},
+                {new Cell(false), new Cell(true), new Cell(true)}
+        };
+        CellGrid cellGrid = new CellGrid(cells);
+
         assertArrayEquals(evolvedCells, cellGrid.evolve());
     }
 }
