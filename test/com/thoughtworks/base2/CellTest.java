@@ -71,4 +71,10 @@ public class CellTest {
 
         assertEquals(new Cell(true).format(), cell.format());
     }
+
+    @Test
+    public void cellShouldBeEqualToItself() {
+        Cell cell = new Cell(true);
+        assertEquals(cell, cell);
+    }
 }
