@@ -82,4 +82,10 @@ public class CellTest {
     public void twoAliveCellsAreEqual() {
         assertEquals(new Cell(true), new Cell(true));
     }
+
+
+    @Test
+    public void twoDeadCellsAreEqual() {
+        assertEquals(new Cell(false), new Cell(false));
+    }
 }
