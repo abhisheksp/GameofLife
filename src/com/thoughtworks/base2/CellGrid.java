@@ -1,5 +1,6 @@
 package com.thoughtworks.base2;
 
+/* CellGrid contains a grid of cells and can find alive neighbours coutn for each cell */
 public class CellGrid {
 
     private Cell[][] cells;
