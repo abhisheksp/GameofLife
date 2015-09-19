@@ -22,4 +22,8 @@ public class Cell {
     public void kill() {
         isAlive = false;
     }
+
+    public void revive() {
+        isAlive = true;
+    }
 }

@@ -53,4 +53,13 @@ public class CellTest {
 
         assertEquals(new Cell(false).format(), cell.format());
     }
+
+    @Test
+    public void shouldReviveDeadCellWhenReviveIsCalled() {
+        Cell cell = new Cell(false);
+
+        cell.revive();
+
+        assertEquals(new Cell(true).format(), cell.format());
+    }
 }
