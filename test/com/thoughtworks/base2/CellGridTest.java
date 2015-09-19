@@ -80,15 +80,15 @@ public class CellGridTest {
     }
 
     @Test
-    public void shouldReturnAliveNeighboursSecondaryDiagonalCountInOneDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
+    public void shouldReturnAliveNeighboursSecondaryDiagonalCountInBothDirectionsWhenAliveNeighboursCountIsCalledForAGivenCell() {
         Cell[][] cells = {
                 {new Cell(false), new Cell(false) , new Cell(true)},
                 {new Cell(false), new Cell(false), new Cell(false)},
-                {new Cell(false), new Cell(false), new Cell(false)}
+                {new Cell(true), new Cell(false), new Cell(false)}
         };
         CellGrid cellGrid = new CellGrid(cells);
 
-        assertEquals(1, cellGrid.aliveNeighboursCount(1, 1));
+        assertEquals(2, cellGrid.aliveNeighboursCount(1, 1));
     }
 
     @Test
