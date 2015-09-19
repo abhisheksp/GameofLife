@@ -12,6 +12,8 @@ public class CellGrid {
         int count = 0;
         if (cells[xCoordinate][yCoordinate + 1].isAlive())
             count++;
+        if (cells[xCoordinate][yCoordinate - 1].isAlive())
+            count++;
         return count;
     }
 }
